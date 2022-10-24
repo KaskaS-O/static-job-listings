@@ -1,0 +1,18 @@
+Organising a project's structure with styled components
+https://www.robinwieruch.de/styled-components/
+
+React project's file structure
+https://www.robinwieruch.de/react-folder-structure/
+
+Komponenty
+
+- App
+  - Header
+  - OffersList
+    - JobOffer
+      - Logo
+      - Info
+        - OfferHeader (company name, new, featured)
+        - Position
+        - Details (postedAt, contract, location)
+      - Categories (languages, tools)
