@@ -1,0 +1,11 @@
+// - Font size: 15px
+@import "normalize";
+@import "variables";
+
+:root {
+  --bg: hsl(180, 52%, 96%);
+  --filter-tablets: hsl(180, 31%, 95%);
+  --titles: hsl(180, 14%, 20%);
+  --primary-txt: hsl(180, 29%, 50%);
+  --secondary-txt: hsl(180, 8%, 52%);
+}

@@ -1,8 +1,10 @@
+import Header from "../Header/Header";
+
 function App() {
   return (
     <div className="App">
-      Hello
-      <div class="attribution">
+      <Header />
+      <div className="attribution">
         Challenge by{" "}
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
           Frontend Mentor

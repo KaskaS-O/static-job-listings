@@ -1,0 +1,13 @@
+import { ReactComponent as headerBgMobile } from "../images/bg-header-mobile.svg";
+import { ReactComponent as headerBgDesktop } from "../images/bg-header-desktop.svg";
+
+const Header = () => {
+  const Bg = window.innerWidth <= 1024 ? headerBgMobile : headerBgDesktop;
+  return (
+    <header>
+      <Bg />
+    </header>
+  );
+};
+
+export default Header;
