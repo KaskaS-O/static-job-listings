@@ -4,9 +4,14 @@ https://www.robinwieruch.de/styled-components/
 React project's file structure
 https://www.robinwieruch.de/react-folder-structure/
 
+Fetching data from an API in React app
+https://blog.logrocket.com/modern-api-data-fetching-methods-react/
+https://reactjs.org/docs/faq-ajax.html
+
 Komponenty
 
 - App
+
   - Header
   - OffersList
     - JobOffer
@@ -16,3 +21,5 @@ Komponenty
         - Position
         - Details (postedAt, contract, location)
       - Categories (languages, tools)
+
+- ogarnac wysokosc logo w headerze (widac zielony pasek na dole)
