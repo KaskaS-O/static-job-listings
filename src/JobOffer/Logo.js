@@ -1,5 +1,9 @@
 const Logo = (props) => {
-  return <div>{props.logo}</div>;
+  return (
+    <div>
+      <img src={props.logo} alt="Company logo" />
+    </div>
+  );
 };
 
 export default Logo;
