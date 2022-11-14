@@ -1,14 +1,25 @@
 const Categories = (props) => {
-  const { role, level, languages, tools } = props;
-  languages.map((lang) => <span>{lang}</span>);
+  const { role, level, languages, tools, handleFilter } = props;
 
-  tools.map((tool) => <span>{tool}</span>);
+  const filters = [role, level]
+    .concat(languages)
+    .concat(tools)
+    .map((filter, index) => (
+      <button key={index} onClick={handleFilter}>
+        {filter}
+      </button>
+    ));
+  // const { role, level } = props;
+  // const languages = props.languages.map((lang) => <button>{lang}</button>);
+  // const tools = props.tools.map((tool) => <button>{tool}</button>);
+
   return (
     <div>
-      <span>{role}</span>
-      <span>{level}</span>
+      {/* <button>{role}</button>
+      <button>{level}</button>
       {languages}
-      {tools}
+      {tools} */}
+      {filters}
     </div>
   );
 };

@@ -4,11 +4,13 @@ import Header from "../Header/Header";
 import OffersList from "../OffersList/OffersList";
 import Footer from "../Footer/Footer";
 import React from "react";
+import FilterPanel from "../FilterPanel/FilterPanel";
 
 function App() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [activeFilters, setActiveFilters] = useState([]);
 
   useEffect(() => {
     fetch("data/data.json")
@@ -32,10 +34,32 @@ function App() {
       });
   }, []);
 
+  const handleFilterClick = (e) => {
+    const newFilter = e.target.innerText.toLowerCase();
+    if (activeFilters.indexOf(newFilter) === -1) {
+      setActiveFilters([...activeFilters, newFilter]);
+    } else return;
+  };
+
+  const handleRemoveClick = (e) => {
+    const removedFilter = e.target.parentElement.getAttribute("data-id");
+    const newFilters = activeFilters.filter(
+      (filter) => filter !== removedFilter
+    );
+    setActiveFilters(newFilters);
+  };
+
   return (
     <div className="App">
       <Header />
-      <OffersList data={data} />
+      {activeFilters.length === 0 ? null : (
+        <FilterPanel filters={activeFilters} handleRemove={handleRemoveClick} />
+      )}
+      <OffersList
+        data={data}
+        activeFilters={activeFilters}
+        handleFilter={handleFilterClick}
+      />
       <Footer />
     </div>
   );

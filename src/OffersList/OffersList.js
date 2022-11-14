@@ -3,11 +3,27 @@ import { StyledList } from "./style";
 
 const OffersList = (props) => {
   let offers = [];
+  let offersToVerify = [];
+  let activeOffers = [];
 
   if (!props.data) {
     return;
   } else {
-    offers = props.data.map((offer) => (
+    offersToVerify = props.data.map((offer) => {
+      offer.offerFilters = [
+        offer.role,
+        offer.level,
+        ...offer.languages,
+        ...offer.tools,
+      ].map((filter) => filter.toLowerCase());
+      return offer;
+    });
+
+    activeOffers = offersToVerify.filter((offer) =>
+      props.activeFilters.every((item) => offer.offerFilters.includes(item))
+    );
+
+    offers = activeOffers.map((offer) => (
       <JobOffer
         key={offer.id}
         id={offer.id}
@@ -23,6 +39,7 @@ const OffersList = (props) => {
         location={offer.location}
         languages={offer.languages}
         tools={offer.tools}
+        handleFilter={props.handleFilter}
       />
     ));
   }

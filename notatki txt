@@ -8,18 +8,18 @@ Fetching data from an API in React app
 https://blog.logrocket.com/modern-api-data-fetching-methods-react/
 https://reactjs.org/docs/faq-ajax.html
 
-Komponenty
+Dynamically import of SVG in React
+https://medium.com/@erickhoury/react-dynamically-importing-svgs-and-render-as-react-component-b764b6475896
 
-- App
+Updating arrays in state:
+https://beta.reactjs.org/learn/updating-arrays-in-state
 
-  - Header
-  - OffersList
-    - JobOffer
-      - Logo
-      - Info
-        - OfferHeader (company name, new, featured)
-        - Position
-        - Details (postedAt, contract, location)
-      - Categories (languages, tools)
+Checking if an array constains all elements of another array:
+https://www.designcise.com/web/tutorial/how-to-check-if-an-array-contains-all-elements-of-another-array-in-javascript
 
 - ogarnac wysokosc logo w headerze (widac zielony pasek na dole)
+
+HANDLE FILTER
+
+- w OffersList porownujemy zawartosc activeFilters z offer.tools i offer.languages, jak sie zgadza to dana oferta idzie do [] offers, jak nie to nie
+  > > > > ogarnac jak to zrobic zeby to dobrze przefiltrowac (czy zrobic offersToVerify.map i wewnatrz dla offer.offerFilters filter?)

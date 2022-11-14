@@ -15,9 +15,11 @@ const JobOffer = (props) => {
     location,
     languages,
     tools,
+    handleFilter,
   } = props;
+
   return (
-    <div>
+    <li>
       <Logo logo={logo} />
       <Info
         company={company}
@@ -33,8 +35,9 @@ const JobOffer = (props) => {
         level={level}
         languages={languages}
         tools={tools}
+        handleFilter={handleFilter}
       />
-    </div>
+    </li>
   );
 };
 
