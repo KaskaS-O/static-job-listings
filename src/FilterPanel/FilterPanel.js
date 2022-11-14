@@ -13,7 +13,7 @@ const FilterPanel = (props) => {
   return (
     <div>
       <ul>{filters}</ul>
-      <button>Clear</button>
+      <button onClick={props.handleClear}>Clear</button>
     </div>
   );
 };

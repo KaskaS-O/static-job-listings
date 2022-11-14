@@ -49,11 +49,20 @@ function App() {
     setActiveFilters(newFilters);
   };
 
+  const handleClearClick = () => {
+    setActiveFilters([]);
+  };
+  console.log(activeFilters);
+
   return (
     <div className="App">
       <Header />
       {activeFilters.length === 0 ? null : (
-        <FilterPanel filters={activeFilters} handleRemove={handleRemoveClick} />
+        <FilterPanel
+          filters={activeFilters}
+          handleRemove={handleRemoveClick}
+          handleClear={handleClearClick}
+        />
       )}
       <OffersList
         data={data}
