@@ -52,7 +52,6 @@ function App() {
   const handleClearClick = () => {
     setActiveFilters([]);
   };
-  console.log(activeFilters);
 
   return (
     <div className="App">

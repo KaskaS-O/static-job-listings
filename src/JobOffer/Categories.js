@@ -5,9 +5,9 @@ const Categories = (props) => {
     .concat(languages)
     .concat(tools)
     .map((filter, index) => (
-      <button key={index} onClick={handleFilter}>
+      <span key={index} onClick={handleFilter}>
         {filter}
-      </button>
+      </span>
     ));
   // const { role, level } = props;
   // const languages = props.languages.map((lang) => <button>{lang}</button>);
