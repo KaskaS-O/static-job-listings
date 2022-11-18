@@ -18,8 +18,3 @@ Checking if an array constains all elements of another array:
 https://www.designcise.com/web/tutorial/how-to-check-if-an-array-contains-all-elements-of-another-array-in-javascript
 
 - ogarnac wysokosc logo w headerze (widac zielony pasek na dole)
-
-HANDLE FILTER
-
-- w OffersList porownujemy zawartosc activeFilters z offer.tools i offer.languages, jak sie zgadza to dana oferta idzie do [] offers, jak nie to nie
-  > > > > ogarnac jak to zrobic zeby to dobrze przefiltrowac (czy zrobic offersToVerify.map i wewnatrz dla offer.offerFilters filter?)

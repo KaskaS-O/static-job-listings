@@ -1,20 +1,28 @@
 import RemoveIcon from "../images/icon-remove.svg";
+import {
+  StyledActiveFilter,
+  StyledClearBtn,
+  StyledElement,
+  StyledFilterList,
+  StyledFilterPanel,
+  StyledRemoveBtn,
+} from "./style";
 
 const FilterPanel = (props) => {
   const filters = props.filters.map((filter, index) => (
-    <li key={index}>
-      <span>{filter}</span>
-      <span onClick={props.handleRemove} data-id={filter}>
+    <StyledElement key={index}>
+      <StyledActiveFilter>{filter}</StyledActiveFilter>
+      <StyledRemoveBtn onClick={props.handleRemove} data-id={filter}>
         <img src={RemoveIcon} alt="remove" />
-      </span>
-    </li>
+      </StyledRemoveBtn>
+    </StyledElement>
   ));
 
   return (
-    <div>
-      <ul>{filters}</ul>
-      <button onClick={props.handleClear}>Clear</button>
-    </div>
+    <StyledFilterPanel>
+      <StyledFilterList>{filters}</StyledFilterList>
+      <StyledClearBtn onClick={props.handleClear}>Clear</StyledClearBtn>
+    </StyledFilterPanel>
   );
 };
 

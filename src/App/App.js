@@ -6,6 +6,8 @@ import Footer from "../Footer/Footer";
 import React from "react";
 import FilterPanel from "../FilterPanel/FilterPanel";
 
+import { StyledWrapper } from "./style";
+
 function App() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -35,7 +37,7 @@ function App() {
   }, []);
 
   const handleFilterClick = (e) => {
-    const newFilter = e.target.innerText.toLowerCase();
+    const newFilter = e.target.innerText;
     if (activeFilters.indexOf(newFilter) === -1) {
       setActiveFilters([...activeFilters, newFilter]);
     } else return;
@@ -56,18 +58,20 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {activeFilters.length === 0 ? null : (
-        <FilterPanel
-          filters={activeFilters}
-          handleRemove={handleRemoveClick}
-          handleClear={handleClearClick}
+      <StyledWrapper>
+        {activeFilters.length === 0 ? null : (
+          <FilterPanel
+            filters={activeFilters}
+            handleRemove={handleRemoveClick}
+            handleClear={handleClearClick}
+          />
+        )}
+        <OffersList
+          data={data}
+          activeFilters={activeFilters}
+          handleFilter={handleFilterClick}
         />
-      )}
-      <OffersList
-        data={data}
-        activeFilters={activeFilters}
-        handleFilter={handleFilterClick}
-      />
+      </StyledWrapper>
       <Footer />
     </div>
   );

@@ -1,8 +1,10 @@
+import { StyledLogoContainer } from "./style";
+
 const Logo = (props) => {
   return (
-    <div>
+    <StyledLogoContainer>
       <img src={props.logo} alt="Company logo" />
-    </div>
+    </StyledLogoContainer>
   );
 };
 

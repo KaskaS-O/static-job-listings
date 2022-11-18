@@ -1,3 +1,5 @@
+import { StyledFilter, StyledFiltersContainer } from "./style";
+
 const Categories = (props) => {
   const { role, level, languages, tools, handleFilter } = props;
 
@@ -5,23 +7,12 @@ const Categories = (props) => {
     .concat(languages)
     .concat(tools)
     .map((filter, index) => (
-      <span key={index} onClick={handleFilter}>
+      <StyledFilter key={index} onClick={handleFilter}>
         {filter}
-      </span>
+      </StyledFilter>
     ));
-  // const { role, level } = props;
-  // const languages = props.languages.map((lang) => <button>{lang}</button>);
-  // const tools = props.tools.map((tool) => <button>{tool}</button>);
 
-  return (
-    <div>
-      {/* <button>{role}</button>
-      <button>{level}</button>
-      {languages}
-      {tools} */}
-      {filters}
-    </div>
-  );
+  return <StyledFiltersContainer>{filters}</StyledFiltersContainer>;
 };
 
 export default Categories;

@@ -16,7 +16,7 @@ const OffersList = (props) => {
       offer.level,
       ...offer.languages,
       ...offer.tools,
-    ].map((filter) => filter.toLowerCase());
+    ];
     return offer;
   });
 

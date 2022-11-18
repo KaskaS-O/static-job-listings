@@ -1,6 +1,7 @@
 import Logo from "./Logo";
 import Info from "./Info";
 import Categories from "./Categories";
+import { StyledBar, StyledBorder, StyledElement } from "./style";
 
 const JobOffer = (props) => {
   const {
@@ -19,7 +20,8 @@ const JobOffer = (props) => {
   } = props;
 
   return (
-    <li>
+    <StyledElement>
+      <StyledBar />
       <Logo logo={logo} />
       <Info
         company={company}
@@ -30,6 +32,7 @@ const JobOffer = (props) => {
         contract={contract}
         location={location}
       />
+      <StyledBorder />
       <Categories
         role={role}
         level={level}
@@ -37,7 +40,7 @@ const JobOffer = (props) => {
         tools={tools}
         handleFilter={handleFilter}
       />
-    </li>
+    </StyledElement>
   );
 };
 

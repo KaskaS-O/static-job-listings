@@ -1,17 +1,32 @@
+import {
+  StyledDotIcon,
+  StyledCompanyName,
+  StyledDetail,
+  StyledDetailsContainer,
+  StyledFeatured,
+  StyledInfo,
+  StyledNew,
+  StyledPosition,
+} from "./style";
+
 const Info = (props) => {
   const { company, featured, position, postedAt, contract, location } = props;
+
   return (
-    <div>
-      <h3>{company}</h3>
-      <h2>{position}</h2>
-      <span>{props.new}</span>
-      <span>{featured}</span>
-      <div>
-        <span>{postedAt}</span>
-        <span>{contract}</span>
-        <span>{location}</span>
-      </div>
-    </div>
+    <StyledInfo>
+      <StyledCompanyName>{company}</StyledCompanyName>
+      {props.new ? <StyledNew>New!</StyledNew> : null}
+      {featured ? <StyledFeatured>Featured</StyledFeatured> : null}
+      <StyledPosition>{position}</StyledPosition>
+
+      <StyledDetailsContainer>
+        <StyledDetail>{postedAt}</StyledDetail>
+        <StyledDotIcon />
+        <StyledDetail>{contract}</StyledDetail>
+        <StyledDotIcon />
+        <StyledDetail>{location}</StyledDetail>
+      </StyledDetailsContainer>
+    </StyledInfo>
   );
 };
 
