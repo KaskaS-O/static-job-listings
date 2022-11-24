@@ -1,6 +1,6 @@
 // - Font size: 15px
-@import "normalize";
 @import "variables";
+@import "normalize";
 
 :root {
   --bg: hsl(180, 52%, 96%);
@@ -21,4 +21,10 @@
   --filter-margin: 10px;
   --close-btn-size: 30px;
   --box-shadow: 0 10px 30px -20px var(--primary-txt);
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--bg);
 }

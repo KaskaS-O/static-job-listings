@@ -21,7 +21,7 @@ const JobOffer = (props) => {
 
   return (
     <StyledElement>
-      <StyledBar />
+      {featured ? <StyledBar /> : null}
       <Logo logo={logo} />
       <Info
         company={company}
@@ -32,7 +32,7 @@ const JobOffer = (props) => {
         contract={contract}
         location={location}
       />
-      <StyledBorder />
+      {window.innerWidth < 1200 ? <StyledBorder /> : null}
       <Categories
         role={role}
         level={level}

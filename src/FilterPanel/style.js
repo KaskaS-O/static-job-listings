@@ -33,6 +33,11 @@ export const StyledRemoveBtn = styled.span`
   background-color: var(--primary-txt);
   border-bottom-right-radius: var(--filter-border-radius);
   border-top-right-radius: var(--filter-border-radius);
+  transition: 0.2s;
+  :hover {
+    cursor: pointer;
+    background-color: var(--titles);
+  }
 
   img {
     position: absolute;
@@ -61,4 +66,10 @@ export const StyledClearBtn = styled.button`
   color: var(--secondary-txt);
   font-size: var(--span-font-size);
   font-weight: 700;
+  transition: 0.2s;
+  :hover {
+    cursor: pointer;
+    color: var(--primary-txt);
+    text-decoration: underline;
+  }
 `;

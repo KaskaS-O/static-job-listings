@@ -1,16 +1,24 @@
 import styled, { css } from "styled-components";
 import React from "react";
 import { ReactComponent as DotIcon } from "../images/dot-svgrepo-com.svg";
+import { device } from "../App/style";
 
 export const StyledElement = styled.li`
   display: grid;
   position: relative;
   border-radius: var(--offer-border-radius);
-  /* box-shadow: 0 10px 30px -20px var(--primary-txt); */
   box-shadow: var(--box-shadow);
   padding: calc(var(--inner-padding) * 2) var(--inner-padding)
     var(--inner-padding);
   background-color: white;
+
+  @media ${device.desktopS} {
+    grid-template-columns: auto auto 1fr;
+    column-gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    padding: calc(var(--inner-padding) * 0.5);
+  } ;
 `;
 
 export const StyledBar = styled.div`
@@ -42,6 +50,15 @@ export const StyledLogoContainer = styled.div`
     height: 100%;
     width: 100%;
   }
+
+  @media ${device.desktopS} {
+    position: relative;
+    left: 0;
+    top: 0;
+    grid-area: 1/1/2/2;
+    height: auto;
+    width: auto;
+  }
 `;
 
 export const StyledInfo = styled.div`
@@ -58,16 +75,25 @@ export const StyledCompanyName = styled.h3`
   font: var(--h3-font-size);
   font-weight: 700;
   font-size: var(--h3-font-size);
+
+  @media ${device.desktopS} {
+    margin-right: 20px;
+  }
 `;
 
 export const StyledPosition = styled.h2`
   color: var(--titles);
   font-size: var(--h2-font-size);
   line-height: 2.2;
+  transition: 0.2s;
+  :hover {
+    cursor: pointer;
+    color: var(--primary-txt);
+  }
 `;
 
 const AttributeStyles = css`
-  padding: 5px 7px;
+  padding: 6px 8px;
   margin: 0 3px;
   border-radius: calc((var(--h3-font-size) + 10px) / 2);
   text-transform: uppercase;
@@ -86,6 +112,12 @@ export const StyledNew = styled.span`
 
 export const StyledDetailsContainer = styled.div`
   color: var(--secondary-txt);
+
+  @media ${device.desktopS} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 
 export const StyledDetail = styled.span`
@@ -106,6 +138,10 @@ export const StyledFiltersContainer = styled.div`
   display: flex;
   row-gap: calc(var(--filter-margin) * 1.5);
   flex-wrap: wrap;
+
+  @media ${device.desktopS} {
+    justify-content: end;
+  }
 `;
 
 export const StyledFilter = styled.span`
@@ -118,4 +154,14 @@ export const StyledFilter = styled.span`
   font-size: var(--span-font-size);
   font-weight: 700;
   line-height: var(--close-btn-size);
+  transition: 0.2s;
+  ${(props) =>
+    props.shouldHover &&
+    css`
+      &:hover {
+        cursor: pointer;
+        background-color: var(--primary-txt);
+        color: var(--filter-tablets);
+      }
+    `}
 `;

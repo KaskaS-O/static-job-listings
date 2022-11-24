@@ -7,7 +7,7 @@ const Categories = (props) => {
     .concat(languages)
     .concat(tools)
     .map((filter, index) => (
-      <StyledFilter key={index} onClick={handleFilter}>
+      <StyledFilter shouldHover key={index} onClick={handleFilter}>
         {filter}
       </StyledFilter>
     ));
