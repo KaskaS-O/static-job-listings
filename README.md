@@ -1,6 +1,6 @@
 # Frontend Mentor - Job listings with filtering solution
 
-![Design preview for the Job listings with filtering coding challenge](./src/design/desktop-preview.jpg)
+![Design preview for the Job listings with filtering coding challenge](./sc/design/desktop-preview.jpg)
 
 This is a solution to the [Job listings with filtering challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
