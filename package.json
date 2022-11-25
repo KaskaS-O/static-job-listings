@@ -13,7 +13,7 @@
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://kaskas-o.github.io/static-job-listings/",
+  "homepage": "https://kaskas-o.github.io/static-job-listings",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
