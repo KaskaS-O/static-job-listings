@@ -14,7 +14,7 @@ const Info = (props) => {
 
   return (
     <StyledInfo>
-      <StyledCompanyName role="company name">{company}</StyledCompanyName>
+      <StyledCompanyName>{company}</StyledCompanyName>
       {props.new ? <StyledNew>New!</StyledNew> : null}
       {featured ? <StyledFeatured>Featured</StyledFeatured> : null}
       <StyledPosition>{position}</StyledPosition>

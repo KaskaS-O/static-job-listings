@@ -15,7 +15,7 @@ const Categories = (props) => {
     ));
 
   return (
-    <StyledFiltersContainer isMobile={isMobile} role="filters list">
+    <StyledFiltersContainer isMobile={isMobile}>
       {filters}
     </StyledFiltersContainer>
   );
