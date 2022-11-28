@@ -14,20 +14,16 @@ const Info = (props) => {
 
   return (
     <StyledInfo>
-      <StyledCompanyName>{company}</StyledCompanyName>
+      <StyledCompanyName role="company name">{company}</StyledCompanyName>
       {props.new ? <StyledNew>New!</StyledNew> : null}
       {featured ? <StyledFeatured>Featured</StyledFeatured> : null}
       <StyledPosition>{position}</StyledPosition>
 
       <StyledDetailsContainer>
         <StyledDetail>{postedAt}</StyledDetail>
-        <span aria-hidden="true" focusable="false">
-          {dotIcon}
-        </span>
+        <span aria-hidden="true">{dotIcon}</span>
         <StyledDetail>{contract}</StyledDetail>
-        <span aria-hidden="true" focusable="false">
-          {dotIcon}
-        </span>
+        <span aria-hidden="true">{dotIcon}</span>
         <StyledDetail>{location}</StyledDetail>
       </StyledDetailsContainer>
     </StyledInfo>
