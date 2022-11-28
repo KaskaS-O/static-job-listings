@@ -1,18 +1,24 @@
-import { StyledFilter, StyledFiltersContainer } from "./style";
+import { StyledFilterBtn, StyledFiltersContainer } from "./style";
 
 const Categories = (props) => {
-  const { role, level, languages, tools, handleFilter } = props;
+  const { role, level, languages, tools, handleFilter, isMobile } = props;
 
   const filters = [role, level]
     .concat(languages)
     .concat(tools)
     .map((filter, index) => (
-      <StyledFilter shouldHover key={index} onClick={handleFilter}>
-        {filter}
-      </StyledFilter>
+      <li>
+        <StyledFilterBtn shouldHover key={index} onClick={handleFilter}>
+          {filter}
+        </StyledFilterBtn>
+      </li>
     ));
 
-  return <StyledFiltersContainer>{filters}</StyledFiltersContainer>;
+  return (
+    <StyledFiltersContainer isMobile={isMobile}>
+      {filters}
+    </StyledFiltersContainer>
+  );
 };
 
 export default Categories;

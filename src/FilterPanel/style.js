@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { StyledFilter } from "../JobOffer/style";
+import { StyledFilterBtn } from "../JobOffer/style";
 
 export const StyledFilterPanel = styled.div`
   transform: translateY(-25px);
@@ -25,12 +25,13 @@ export const StyledElement = styled.li`
   margin: 0 10px 0 0;
 `;
 
-export const StyledRemoveBtn = styled.span`
+export const StyledRemoveBtn = styled.button`
   position: relative;
   display: block;
   height: var(--close-btn-size);
   width: var(--close-btn-size);
   background-color: var(--primary-txt);
+  border: none;
   border-bottom-right-radius: var(--filter-border-radius);
   border-top-right-radius: var(--filter-border-radius);
   transition: 0.2s;
@@ -47,7 +48,7 @@ export const StyledRemoveBtn = styled.span`
   }
 `;
 
-export const StyledActiveFilter = styled(StyledFilter)`
+export const StyledActiveFilter = styled(StyledFilterBtn)`
   height: var(--close-btn-size);
   margin: 0;
   border-bottom-right-radius: 0;

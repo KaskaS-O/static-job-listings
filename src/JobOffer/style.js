@@ -1,7 +1,19 @@
 import styled, { css } from "styled-components";
-import React from "react";
-import { ReactComponent as DotIcon } from "../images/dot-svgrepo-com.svg";
 import { device } from "../App/style";
+
+const beforeBar = css`
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5px;
+    border-top-left-radius: var(--offer-border-radius);
+    border-bottom-left-radius: var(--offer-border-radius);
+    background-color: var(--primary-txt);
+  }
+`;
 
 export const StyledElement = styled.li`
   display: grid;
@@ -18,25 +30,9 @@ export const StyledElement = styled.li`
     justify-content: space-between;
     align-items: center;
     padding: calc(var(--inner-padding) * 0.5);
-  } ;
-`;
+  }
 
-export const StyledBar = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 5px;
-  border-top-left-radius: var(--offer-border-radius);
-  border-bottom-left-radius: var(--offer-border-radius);
-  background-color: var(--primary-txt);
-`;
-
-export const StyledBorder = styled.div`
-  width: 100%;
-  height: 1px;
-  background-color: var(--secondary-txt);
-  margin: var(--inner-padding) 0;
+  ${(props) => props.featured && beforeBar}
 `;
 
 export const StyledLogoContainer = styled.div`
@@ -68,22 +64,26 @@ export const StyledInfo = styled.div`
   line-height: 1.5;
 `;
 
-export const StyledCompanyName = styled.h3`
+export const StyledCompanyName = styled.h2`
   display: inline-block;
   margin-right: var(--inner-padding);
   color: var(--primary-txt);
-  font: var(--h3-font-size);
   font-weight: 700;
-  font-size: var(--h3-font-size);
+  font-size: var(--company-font-size);
 
   @media ${device.desktopS} {
     margin-right: 20px;
   }
 `;
 
-export const StyledPosition = styled.h2`
+export const StyledPosition = styled.button`
+  display: block;
+  border: none;
+  background-color: inherit;
   color: var(--titles);
-  font-size: var(--h2-font-size);
+  font-family: inherit;
+  font-size: var(--position-font-size);
+  font-weight: 700;
   line-height: 2.2;
   transition: 0.2s;
   :hover {
@@ -93,19 +93,20 @@ export const StyledPosition = styled.h2`
 `;
 
 const AttributeStyles = css`
+  display: inline;
   padding: 6px 8px;
   margin: 0 3px;
-  border-radius: calc((var(--h3-font-size) + 10px) / 2);
+  border-radius: calc((var(--company-font-size) + 10px) / 2);
   text-transform: uppercase;
   font-weight: 700;
 `;
 
-export const StyledFeatured = styled.span`
+export const StyledFeatured = styled.p`
   ${AttributeStyles}
   background-color: var(--titles);
 `;
 
-export const StyledNew = styled.span`
+export const StyledNew = styled.p`
   ${AttributeStyles}
   background-color: var(--primary-txt);
 `;
@@ -120,34 +121,42 @@ export const StyledDetailsContainer = styled.div`
   }
 `;
 
-export const StyledDetail = styled.span`
+export const dotIcon = "\u2022";
+
+export const StyledDetail = styled.p`
+  display: inline;
+  margin: 0 3px;
   font-size: var(--span-font-size);
 `;
 
-export const StyledDotIcon = () => {
-  const style = {
-    fill: "var(--secondary-txt)",
-    height: "2px",
-    width: "2px",
-    margin: "2px 3px",
-  };
-  return <DotIcon style={style} />;
-};
+const mobileBorder = css`
+  &::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--secondary-txt);
+    margin: var(--inner-padding) 0;
+  }
+`;
 
-export const StyledFiltersContainer = styled.div`
+export const StyledFiltersContainer = styled.ul`
   display: flex;
   row-gap: calc(var(--filter-margin) * 1.5);
   flex-wrap: wrap;
+  list-style: none;
 
   @media ${device.desktopS} {
     justify-content: end;
   }
+
+  ${(props) => props.isMobile && mobileBorder}
 `;
 
-export const StyledFilter = styled.span`
+export const StyledFilterBtn = styled.button`
   height: var(--close-btn-size);
   margin: 0 var(--filter-margin);
   padding: 0 10px;
+  border: none;
   border-radius: var(--filter-border-radius);
   background-color: var(--filter-tablets);
   color: var(--primary-txt);

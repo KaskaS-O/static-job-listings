@@ -1,5 +1,5 @@
 import {
-  StyledDotIcon,
+  dotIcon,
   StyledCompanyName,
   StyledDetail,
   StyledDetailsContainer,
@@ -21,9 +21,13 @@ const Info = (props) => {
 
       <StyledDetailsContainer>
         <StyledDetail>{postedAt}</StyledDetail>
-        <StyledDotIcon />
+        <span aria-hidden="true" focusable="false">
+          {dotIcon}
+        </span>
         <StyledDetail>{contract}</StyledDetail>
-        <StyledDotIcon />
+        <span aria-hidden="true" focusable="false">
+          {dotIcon}
+        </span>
         <StyledDetail>{location}</StyledDetail>
       </StyledDetailsContainer>
     </StyledInfo>

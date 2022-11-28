@@ -15,8 +15,8 @@
   --inner-padding: 5vw;
   --offer-border-radius: 8px;
   --filter-border-radius: 3px;
-  --h2-font-size: 1.9rem;
-  --h3-font-size: 1.7rem;
+  --position-font-size: 1.9rem;
+  --company-font-size: 1.7rem;
   --span-font-size: 1.5rem;
   --filter-margin: 10px;
   --close-btn-size: 30px;
@@ -27,4 +27,14 @@ body {
   position: relative;
   min-height: 100vh;
   background-color: var(--bg);
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

@@ -1,7 +1,7 @@
 import Logo from "./Logo";
 import Info from "./Info";
 import Categories from "./Categories";
-import { StyledBar, StyledBorder, StyledElement } from "./style";
+import { StyledElement } from "./style";
 
 const JobOffer = (props) => {
   const {
@@ -20,9 +20,8 @@ const JobOffer = (props) => {
   } = props;
 
   return (
-    <StyledElement>
-      {featured ? <StyledBar /> : null}
-      <Logo logo={logo} />
+    <StyledElement featured={featured}>
+      <Logo logo={logo} company={company} />
       <Info
         company={company}
         new={props.new}
@@ -32,13 +31,13 @@ const JobOffer = (props) => {
         contract={contract}
         location={location}
       />
-      {window.innerWidth < 1200 ? <StyledBorder /> : null}
       <Categories
         role={role}
         level={level}
         languages={languages}
         tools={tools}
         handleFilter={handleFilter}
+        isMobile={window.innerWidth < 1200 ? true : false}
       />
     </StyledElement>
   );

@@ -60,6 +60,7 @@ The challenge allowed as well to practice again fetching data from API in React 
 - [Handling SVG in React using styled components](https://vaadarsh8178.medium.com/handling-custom-svgs-in-react-using-styled-components-30d2739ff4cb) - This one helped me to solve problems with using imported SVG with Styled Components.
 - [Updating arrays in state](https://beta.reactjs.org/learn/updating-arrays-in-state) - A nice and short crib on how to update arrays in state. Simple dos and don'ts.
 - [Using every()](https://www.designcise.com/web/tutorial/how-to-check-if-an-array-contains-all-elements-of-another-array-in-javascript) - A very useful article on a very useful method in js. Helped me a lot with filtering job offers depending on selected filters.
+- [Visually hidden content] (https://www.a11yproject.com/posts/how-to-hide-content/) - The article on how to visually hide content, which should be available for screen readers.
 
 ## Author
 

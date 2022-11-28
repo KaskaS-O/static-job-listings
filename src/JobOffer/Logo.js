@@ -3,7 +3,7 @@ import { StyledLogoContainer } from "./style";
 const Logo = (props) => {
   return (
     <StyledLogoContainer>
-      <img src={props.logo} alt="Company logo" />
+      <img src={props.logo} alt={props.company} />
     </StyledLogoContainer>
   );
 };

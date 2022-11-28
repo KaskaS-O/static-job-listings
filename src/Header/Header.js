@@ -1,9 +1,9 @@
-import { StyledBg, StyledHeader, StyledTitle } from "./style";
+import { StyledBg, StyledHeader } from "./style";
 
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledTitle>Static Job Listing</StyledTitle>
+      <h1 className="visually-hidden">Static Job Listing</h1>
       <StyledBg />
     </StyledHeader>
   );
