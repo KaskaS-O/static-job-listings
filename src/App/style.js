@@ -21,7 +21,7 @@ export const device = {
   desktopL: `(min-width: ${sizes.desktopL})`,
 };
 
-export const StyledWrapper = styled.div`
+export const StyledWrapper = styled.main`
   display: flex;
   flex-direction: column;
 `;
